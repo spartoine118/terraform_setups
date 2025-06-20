@@ -25,12 +25,12 @@ resource "google_container_cluster" "primary" {
   initial_node_count       = 1
 }
 
-#A node pool is basically a template for nodes to follow. In this case we will create 1 node that will use this template.
+#A node pool is basically a template for nodes to follow. In this case we will create 3 nodes that will use this template.
 resource "google_container_node_pool" "primary_preemptible_nodes" {
   name       = "my-node-pool"
   location   = var.REGION
   cluster    = google_container_cluster.primary.name
-  node_count = 1
+  node_count = 3
 
   node_config {
     preemptible  = true
