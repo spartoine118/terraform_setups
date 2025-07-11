@@ -1,11 +1,8 @@
 # Basic setup
 
-This contains a terraform template that only contains the core necessities to deploy on google cloud
+This contains a terraform template that contains services required to create a pubsub on google cloud with the following components:
 
-# Necessary setup
-
-You will need to create a cloud bucket manually on the on your google cloud environment
-
-# How this works
-
-This creates a backend.tf file that will instruct terraform to fetch and save the state from a google bucket storage
+1. A topic
+2. A subscription for both pull or push type subscription
+3. A dead letter topic to receive failed messages from the subscription
+4. A subscription to receive messages from the dead letter topic
